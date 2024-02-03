@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <br>
+    <br>
+    <h1 class="change-color ">My Life</h1>
+    <br>
+    
+    <input type="checkbox" id="dark-light-mode-switch"> Change  mode</input> 
+    <style>
+        *{
+            text-decoration: none;
+            text-transform: uppercase
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .faq {
+            margin: 20px;
+            text-transform: calc();
+        }
+
+        .faq-title {
+          text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            text-transform: calc();
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+            text-transform: calc();
+        }
+
+        .faq-question {
+          
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: calc();
+        }
+
+        .faq-answer {
+            display: none;
+            font-size: 16px;
+            padding: 10px;
+            color:black;
+             background-color: #f8f9fa; 
+            border-radius: 5px;
+            text-transform: calc();
+        }
+
+        *{
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            /* background-color:#D3D3D3;  */
+        }
+        @keyframes change-color {
+            0% { color: crimson; }
+            33% { color: palevioletred; }
+            56% { color: brown; }
+            66% { color: purple; }
+            76% { color: mediumorchid; }
+            100% { color:darkblue; }
+          }
+          
+          .change-color {
+            animation: change-color 2s linear infinite;
+            text-decoration: none;
+            text-align: center;
+          }
+
+          @keyframes faq-title {
+            0% { color: crimson; }
+            33% { color: palevioletred; }
+            56% { color: brown; }
+            66% { color: purple; }
+            76% { color: mediumorchid; }
+            100% { color:darkblue; }
+          }
+          
+          .faq-title {
+            animation: change-color 2s linear infinite;
+            text-decoration: none;
+            text-align: center;
+          }
+        /* h1{
+            
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: #D3D3D3;
+            text-decoration: underline;
+            color: crimson;
+        } */
+        .dark-mode {
+            background-color: #222;
+            color: #d3d3d3;
+          }
+        .mode{
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-style:italic ;
+        }
+        p{
+            text-align: center;
+            display: inline;
+            font-size: 30px;
+            font-size: 1.3em;
+            line-height: 1.6;
+            letter-spacing: .04em;
+            font-weight: bold;
+            font-style: italic;
+            font-variant: small-caps;
+            font-stretch: condensed;
+            
+            font-feature-settings: "ss01" on;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        
+            /* color: black; */
+        }
+        
+        .sticky-footer {
+            position: absolute;
+            bottom: 10;
+            width: 100%;
+            /* background-color: #f1f1f1; */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+  
+   
+</head>
+<body>
+    <div class="faq">
+        <div class="faq-title">About My Life</div>
+        <div class="faq-item">
+          <br>
+          <br>
+          <br>
+
+            <div class="faq-question" onclick="toggleAnswer(this)"> My Education</div>
+            <div class="faq-answer">Hey I ,M KRISHNA THIS SIDE I M B TECH 2ND YEAR (INFORMATION TECHNOLOGY ) STUDENT AT DR. RAM MANOHAN LOHIA AWADH UNIVERSITY<BR>
+                I COMPLETE MY CLASS 10TH 0R 12TH  AT
+              ADITYA BIRLA INTERMEDIATE COLLEGE
+            </div>
+        </div>
+        <br>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">MY PROJECTS </div>
+            <div class="faq-answer">I WAS MAKING SO MANY WEBSITE CLOAN <BR> I MAKE PROTFOLIO <BR> I MAY A WABSITE HER NAME IS DONATE IS <BR> I VERY WELL KNOUW ALL IN FRONT-END DEVELOPMENT</div>
+        </div>
+        <br>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">SKILS </div>
+            <div class="faq-answer">I KNOW HTML <BR> CSS <BR> JAVASCRIPT <BR>GIT & GITHUB <BR> REACT JS <BR> BOOTSTARP ...</div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+    <footer class="sticky-footer">
+      <p>&copy; 2023 My PORTFOLIO . All rights reserved.</p>
+  </footer>
+
+  <script>
+      function initDarkLightModeSwitch() {
+//check if user preference is already set
+if (localStorage.getItem('dark-light-mode') === 'dark') {
+document.body.classList.add('dark-mode');
+document.getElementById('dark-light-mode-switch').checked = true;
+} else {
+document.body.classList.remove('dark-mode');
+document.getElementById('dark-light-mode-switch').checked = false;
+}
+}
+
+function toggleDarkLightMode(isDarkMode) {
+if (isDarkMode) {
+document.body.classList.add('dark-mode');
+localStorage.setItem('dark-light-mode', 'dark');
+} else {
+document.body.classList.remove('dark-mode');
+localStorage.setItem('dark-light-mode', 'light');
+}
+}
+
+//function to call on checkbox change
+function darkLightModeChanged() {
+const isDarkMode = document.getElementById('dark-light-mode-switch').checked;
+toggleDarkLightMode(isDarkMode);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+initDarkLightModeSwitch();
+
+// add event listener for switch button
+document.getElementById('dark-light-mode-switch').addEventListener('change', darkLightModeChanged);
+});
+    function toggleAnswer(item) {
+        let answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+</body>
+</html>
