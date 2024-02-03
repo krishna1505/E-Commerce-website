@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    /* background-color: #D3D3D3; */
+}
+@keyframes change-color {
+    0% { color: crimson; }
+    33% { color: palevioletred; }
+    56% { color: brown; }
+    66% { color: purple; }
+    76% { color: mediumorchid; }
+    100% { color:darkblue; }
+  }
+  
+  .change-color {
+    animation: change-color 2s linear infinite;
+    text-decoration: none;
+    text-align: center;
+  }
+  .dark-mode {
+    background-color: #222;
+    color: #d3d3d3;
+  }
+/* h2{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: #D3D3D3;
+    text-decoration: underline;
+    color: crimson;
+} */
+.paragraph{
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px;
+    text-transform: capitalize;
+}
+p{
+    text-align: center;
+    display: inline;
+    font-size: 18px;
+    font-size: 1.5em;
+    line-height: 1.6;
+    letter-spacing: .04em;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    font-stretch: condensed;
+    
+    font-feature-settings: "ss01" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    /* color: black; */
+    text-align: center;
+
+
+}
+.sticky-footer {
+    position: absolute;
+    bottom: 10;
+    width: 100%;
+    /* background-color: #f1f1f1; */
+    padding: 20px;
+    text-align: center;
+}
+.sticky-footer:hover{
+    color: crimson;
+}
+    </style>
+</head>
+<body>
+    <h1 class="change-color "> CONTACT US</h1>
+    <br>
+    <br>
+    <input type="checkbox" id="dark-light-mode-switch"> Change  mode</input> 
+    <br>
+    <form action="/contactus/submit" method="post"></form>
+    <div class="paragraph">
+      <p>If you have any questions or inquiries, feel free to contact us using the information below:</p>
+      <br>
+      <br>
+      <p>Email: KY2288922@gmail.com</p>
+      <br>
+      <p>Phone Number1: 6393655863</p>
+      <br>
+      <p>Phone Number2: 7054215638 </p>
+      <br>
+      <p>instagram__krishna.2004</p>
+      <br>
+      <p>Linkedin: krishna yadav</p>
+      <br>
+      <p>Git hub: = krishna yadav</p>
+      </div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="sticky-footer">
+    <p>&copy; 2023 My PORTFOLIO. All rights reserved.</p>
+</footer>
+<script>
+    function initDarkLightModeSwitch() {
+  //check if user preference is already set
+  if (localStorage.getItem('dark-light-mode') === 'dark') {
+  document.body.classList.add('dark-mode');
+  document.getElementById('dark-light-mode-switch').checked = true;
+  } else {
+  document.body.classList.remove('dark-mode');
+  document.getElementById('dark-light-mode-switch').checked = false;
+  }
+  }
+  
+  function toggleDarkLightMode(isDarkMode) {
+  if (isDarkMode) {
+  document.body.classList.add('dark-mode');
+  localStorage.setItem('dark-light-mode', 'dark');
+  } else {
+  document.body.classList.remove('dark-mode');
+  localStorage.setItem('dark-light-mode', 'light');
+  }
+  }
+  
+  //function to call on checkbox change
+  function darkLightModeChanged() {
+  const isDarkMode = document.getElementById('dark-light-mode-switch').checked;
+  toggleDarkLightMode(isDarkMode);
+  }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+  initDarkLightModeSwitch();
+  
+  // add event listener for switch button
+  document.getElementById('dark-light-mode-switch').addEventListener('change', darkLightModeChanged);
+  });
+  </script>
+  
+  
+</html>
